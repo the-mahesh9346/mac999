@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>LIONS OTT</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <style>
+        body {
+          background-color: #000;
+          color: #fff;
+          font-family: sans-serif;
+        }
+        .navbar-brand {
+          font-size: 24px;
+          font-weight: bold;
+        }
+        .nav-link {
+          color: #fff !important;
+          margin-right: 15px;
+        }
+        .carousel-item img {
+          height: 800px;
+          object-fit: cover;
+        }
+        .play-btn {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 40px;
+          background: rgba(0,0,0,0.5);
+          padding: 10px 20px;
+          border-radius: 50%;
+          color: #fff;
+          text-decoration: none;
+        }
+        .movie-row {
+          display: flex;
+          overflow-x: auto;
+          gap: 15px;
+          padding: 15px;
+        }
+        .movie-row::-webkit-scrollbar {
+          display: none;
+        }
+        .movie-poster {
+          width: 300px;
+          flex-shrink: 0;
+          border-radius: 10px;
+          transition: transform 0.3s ease;
+        }
+        .movie-poster:hover {
+          transform: scale(1.05);
+        }
+        .section-title {
+          margin-left: 15px;
+          margin-top: 25px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        .footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer h2 {
+  color: #fff;
+  font-size: 28px;
+  margin: 0;
+}
+
+.footer p {
+  margin: 5px 0 15px;
+  font-size: 14px;
+}
+
+.footer-links,
+.footer-policies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-links a,
+.footer-policies a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-policies a:hover {
+  color: #fff;
+}
+
+.media-partners {
+  margin: 20px 0;
+}
+
+.media-partners p {
+  font-size: 15px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  padding: 4px;
+  border-radius: 6px;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+      </style>
+    </head>
+    <body>
+    
+    <!-- 🔝 Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-fluid">
+      <a class="navbar-brand text-warning" href="#"> LIONS</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">TV Shows</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Trailer</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Popular</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Lions TV</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Language</a></li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control form-control-sm me-2" type="search" placeholder="Search" />
+        </form>
+      </div>
+    </nav>
+    
+    <!--  Banner Carousel. -->
+    <div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active position-relative">
+          <img src="https://assets-in.bmscdn.com/discovery-catalog/events/et00419964-phyflmkvtn-landscape.jpg" class="d-block w-100" alt="Daku Maharaj">
+          <a href="https://youtu.be/fNDRSver0uM" class="play-btn" target="_blank">▶</a>
+        </div>
+        <div class="carousel-item position-relative">
+          <img src="https://assets-in.bmscdn.com/discovery-catalog/events/et00312056-hsdgnwcqbv-landscape.jpg" class="d-block w-100" alt="SR Kalyana Mandapam">
+          <a href="https://youtu.be/FQ5bBHGlLLU" class="play-btn" target="_blank">▶</a>
+        </div>
+        <div class="carousel-item position-relative">
+          <img src="https://i.ytimg.com/vi/JgeilgVZC0E/maxresdefault.jpg" class="d-block w-100" alt="Dilruba">
+          <a href="https://youtu.be/STAEe52jgJU?list=RDSTAEe52jgJU" class="play-btn" target="_blank">▶</a>
+        </div>
+      </div>
+    </div>
+    
+    <!--  Section 1: Local Cinema. -->
+    <h5 class="section-title"> Local Cinema</h5>
+    <div class="movie-row">
+      <a href="https://youtu.be/DYLG65xz55U" target="_blank">
+        <img src="https://images.tv9telugu.com/wp-content/uploads/2024/02/gunturu-kaaram.jpg?w=1280" class="movie-poster" alt="Guntur Kaaram" />
+      </a>
+      <a href="https://youtu.be/U3aPapvUihg" target="_blank">
+        <img src="https://trackboxoffice.com/images/2024/kollywood/Amaran/Amaran-2.jpg" class="movie-poster" alt="Amaran" />
+      </a>
+      <a href="https://youtu.be/77vRyWNqZjM" target="_blank">
+        <img src="https://i0.wp.com/www.thestyle.world/wp-content/uploads/2025/02/maxresdefault3-ezgif.com-jpg-to-webp-converter.webp?resize=770%2C470&ssl=1" class="movie-poster" alt="Chhaava" />
+      </a>
+      <a href="https://youtu.be/krdomVobIxE" target="_blank">
+        <img src="https://www.telugubulletin.com/wp-content/uploads/2024/10/Lucky-Bhaskar-Review.webp" class="movie-poster" alt="Lucky Basker" />
+      </a>
+      <a href="https://youtu.be/ozRCVFgsrbY" target="_blank">
+        <img src="https://static.toiimg.com/thumb/msid-101172246,width-1280,height-720,resizemode-4/101172246.jpg" class="movie-poster" alt="Leo" />
+      </a>
+      <a href="https://youtu.be/YD7b4gU0HWQ" target="_blank">
+        <img src="https://i0.wp.com/indiacurrents.com/wp-content/uploads/2023/12/Animal-IMDB-.jpg?fit=1200%2C675&ssl=1" class="movie-poster" alt="Anumal" />
+      </a>
+    </div>
+    
+    <!--  Section 2: Blockbuster Show. -->
+    <h5 class="section-title"> Blockbuster Show</h5>
+    <div class="movie-row">
+      <a href="https://youtu.be/Mo-fv7b77t8" target="_blank">
+        <img src="https://resizing.flixster.com/Wz4E4xIGwWqo_3fJDSyeoMXqLdo=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23030032_v_h10_ab.jpg" class="movie-poster" alt="Kantara" />
+      </a>
+      <a href="https://youtu.be/nHPz7tYgoy0" target="_blank">
+        <img src="https://i.ytimg.com/vi/YdG4ZoqHEks/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB4qiXiqhSQ8EG0eHBN_PIC6x8XBw" class="movie-poster" alt="Venom" />
+      </a>
+      <a href="https://youtu.be/db6e22CkmJY" target="_blank">
+        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/media_bank/202309/shah-rukh-khan--jawan--srk-films-295651-16x9.jpg?VersionId=Ddej.9DLpQW91sSb7YB6E_5yd7e1xypP&size=690:388" class="movie-poster" alt="Jawan" />
+      </a>
+      <a href="https://youtu.be/mUDZdBop9gU" target="_blank">
+        <img src="https://images.indianexpress.com/2020/10/Beats-Of-Radhe-Shyam-1200.jpg" class="movie-poster" alt="Radhe Shyam" />
+      </a>
+      <a href="https://youtu.be/QliDRYaknmI" target="_blank">
+        <img src="https://www.telugubulletin.com/wp-content/uploads/2021/12/Shyam-Singha-Roy-Revieew.jpg" class="movie-poster" alt="Shyam Singha Roy" />
+      </a>
+      <a href="https://youtu.be/fB3RcpbLvco" target="_blank">
+        <img src="https://i.ytimg.com/vi/fB3RcpbLvco/maxresdefault.jpg" class="movie-poster" alt="Uppena" />
+      </a>
+    </div>
+    <!--  Section 3: official trailer. -->
+    <h5 class="section-title"> Official Trailer</h5>
+    <div class="movie-row">
+      <a href="https://youtu.be/NZbmcl0QUaU" target="_blank">
+        <img src="https://i.cdn.newsbytesapp.com/images/l56320250621125036.jpeg" class="movie-poster" alt="rajasaab" />
+      </a>
+      <a href="https://youtu.be/Qv-NEQJehVU" target="_blank">
+        <img src="https://assets.hmtvlive.com/h-upload/2021/10/06/324612-hari-hara-veera-mallu-shoot.webp" class="movie-poster" alt="hari hara veera mallu" />
+      </a>
+      <a href="https://youtu.be/1ZltrV9gHCs" target="_blank">
+        <img src="https://assetscdn1.paytm.com/images/cinema/sir-madam-cover-b8268b50-5e4a-11f0-955e-b3a7ddd74d55.jpg" class="movie-poster" alt="sir madam" />
+      </a>
+      <a href="https://youtu.be/ZxlMdEMSmBQ" target="_blank">
+        <img src="https://i.ytimg.com/vi/ZxlMdEMSmBQ/maxresdefault.jpg" class="movie-poster" alt="king dom" />
+      </a>
+      <a href="https://youtu.be/h5-p_RRNXOM" target="_blank">
+        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202506/war-2-260135207-16x9_0.jpg?VersionId=MxoFPy9s84DVTNyEf_AwoJUO3wBqa_fU&size=690:388" class="movie-poster" alt="war-2" />
+      </a>
+      <a href="https://youtu.be/nsqHCfO1ayQ" target="_blank">
+        <img src="https://i.ytimg.com/vi/nsqHCfO1ayQ/maxresdefault.jpg" class="movie-poster" alt="mirai" />
+      </a>
+    </div>
+    <!--  Section 4: hollywood & animation.  -->
+    <h5 class="section-title">Hollywood & Animation </h5>
+    <div class="movie-row">
+      <a href="https://youtu.be/GHZHosFHcJI" target="_blank">
+        <img src="https://i.ytimg.com/vi/9KVG_X_7Naw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCxi7rDzjuxr71xLS-WNdQd6uGqTg" class="movie-poster" alt="Tron: Ares" />
+      </a>
+      <a href="https://youtu.be/B-vFld1M_qM" target="_blank">
+        <img src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/jurassic-world-rebirth/images/regions/us/updates1/header.jpg" class="movie-poster" alt="Jurassic World Rebirth" />
+      </a>
+      <a href="https://youtu.be/O6Qjf4efvvc" target="_blank">
+        <img src="https://images.squarespace-cdn.com/content/v1/5f07844537c8ba699ac3a65a/1749653571215-V18ZM39MMYEPP9VYN5R4/new-poster-for-superman-v0-ls0k4cihzy0f1%2BLarge.jpg" class="movie-poster" alt="Superman" />
+      </a>
+      <a href="https://youtu.be/VkLl95kA9jk" target="_blank">
+        <img src="https://media.assettype.com/deccanherald%2F2025-05-11%2Fm3zi3as7%2Ftrailer.PNG?w=undefined&auto=format%2Ccompress&fit=max" class="movie-poster" alt="Mahavatar Narsimha" />
+      </a>
+      <a href="https://youtu.be/NkSQvE72EZk" target="_blank">
+        <img src="https://i.ytimg.com/vi/ZdC5mFHPldg/maxresdefault.jpg" class="movie-poster" alt="Mortal Kombat II" />
+      </a>
+      <a href="https://youtu.be/MClnEPR-xSE" target="_blank">
+        <img src="https://i.ytimg.com/vi/4KixZRGzxXI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD5JUCmNuKqxJgmHOUs_sjIwPmKTA" class="movie-poster" alt="F1" />
+      </a>
+    </div>
+    <!--  Section 5: kids & family.  -->
+    <h5 class="section-title">Kids & Family </h5>
+    <div class="movie-row">
+      <a href="https://youtu.be/HvLHYox_Vq8" target="_blank">
+        <img src="https://i.ytimg.com/vi/Ammo8e8d9FM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCPqORXIqCOGLZPnIL5FVFcVTClpQ" class="movie-poster" alt="THE BAD GUYS 2" />
+      </a>
+      <a href="https://youtu.be/ETVi5_cnnaE" target="_blank">
+        <img src="https://i.ytimg.com/vi/ETVi5_cnnaE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD49QmyEkVn3ZqY5GDFzdCie0o8rQ" class="movie-poster" alt="Elio" />
+      </a>
+      <a href="https://youtu.be/VWqJifMMgZE" target="_blank">
+        <img src="https://i.ytimg.com/vi/iR7rEEmvBbo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB7P4xzJf0FcHdT8v4OrvLJ2ZC_hA" class="movie-poster" alt="Lilo & Stitch" />
+      </a>
+      <a href="https://youtu.be/6k_V-1Q3JsY" target="_blank">
+        <img src="https://i.ytimg.com/vi/RzMaOgSoiIo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDp28_TbgSPU8soNL0dcE8vbhExNg" class="movie-poster" alt="NE ZHA 2" />
+      </a>
+      <a href="https://youtu.be/YvsQcMyDrDw" target="_blank">
+        <img src="https://i.ytimg.com/vi/YvsQcMyDrDw/maxresdefault.jpg" class="movie-poster" alt="Light Of The World" />
+      </a>
+      <a href="https://youtu.be/T_YhUvumZeM" target="_blank">
+        <img src="https://i.ytimg.com/vi/h8sZ0hDwWKo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBa2mLJN65hiXhrQZta5NqmrqNBBg" class="movie-poster" alt="Inside Out 3" />
+      </a>
+    </div>
+    <!--  Section 6:movie shots.   -->
+    <h5 class="section-title">Movie Shots </h5>
+    <div class="movie-row">
+      <a href="https://youtu.be/b0fPciW_uco" target="_blank">
+        <img src="https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-101561141/101561141.jpg" class="movie-poster" alt="TRIBAL WOMEN'S RESCUE! Prabhas vs. Vishnu | Salaar Movie Scene" />
+      </a>
+      <a href="https://youtu.be/MRpS5plLHms" target="_blank">
+        <img src="https://i.cdn.newsbytesapp.com/images/l54020250113121507.jpeg" class="movie-poster" alt="Daaku Maharaa" />
+      </a>
+      <a href="https://youtu.be/YHNwN3a_-ls" target="_blank">
+        <img src="https://sund-images.sunnxt.com/127027/640x360_Red_127027_499c435a-904c-4c49-846a-f24b47243b75.jpg" class="movie-poster" alt="red" />
+      </a>
+      <a href="https://youtu.be/xIAG-zbWhKA" target="_blank">
+        <img src="https://images.moneycontrol.com/static-mcnews/2024/12/20241205070538_jdjdiwkjncjncc-2024-12-05T123407.366.jpg?impolicy=website&width=770&height=431" class="movie-poster" alt="PUSHPA 2 " />
+      </a>
+      <a href="https://youtu.be/ibsWsubO4qs" target="_blank">
+        <img src="https://image-resizer-cloud-api.akamaized.net/image/A2D5FA05-208D-45CC-9394-7AA4BEA8ED8F/0-16x9.jpg?width=1920&updatedTime=2025-05-27T13:34:51Z&dt=Web" class="movie-poster" alt="tillu " />
+      </a>
+      <a href="https://youtu.be/d9_iifQT89g" target="_blank">
+        <img src="https://image-resizer-cloud-api.akamaized.net/image/F63FC0C0-475A-47FC-9F76-B57017B1753A/0-16x9.jpg?width=1920&updatedTime=2025-07-15T14:14:47Z&dt=Web" class="movie-poster" alt="Premalu" />
+      </a>
+    </div>
+    <!--  Section 7:thriller shows.   -->
+    <h5 class="section-title">Thriller Shows </h5>
+    <div class="movie-row">
+      <a href="https://youtu.be/kHsIJIDrPAY" target="_blank">
+        <img src="https://m.media-amazon.com/images/S/pv-target-images/4c6a0803c6e1ae4b826c7428d87237b998f01a25c8d843b2475ab13aee2a8914.jpg" class="movie-poster" alt="hit2" />
+      </a>
+      <a href="https://youtu.be/u8IQsMZ2POI" target="_blank">
+        <img src="https://m.media-amazon.com/images/S/pv-target-images/d8a62b923e75118cfdc78ac3c54c8c80c0fba071ae547f69adf6b0157f0a3a26.png" class="movie-poster" alt="Bigil" />
+      </a>
+      <a href="https://youtu.be/Fe6YIS9tcGo" target="_blank">
+        <img src="https://sund-images.sunnxt.com/72199/640x360_DhruvaTelugu_72199_d90de6d2-3488-4602-9644-6b3bb28053f8.jpg" class="movie-poster" alt="Dhruva" />
+      </a>
+      <a href="https://youtu.be/kFi-dv6rt58" target="_blank">
+        <img src="https://m.media-amazon.com/images/S/pv-target-images/d3a405a5dfd559093be7c9f18d596971a6a82e5f936f62a43ed584edc014c055.jpg" class="movie-poster" alt="action " />
+      </a>
+      <a href="https://youtu.be/xEnSKYfh83c" target="_blank">
+        <img src="https://image-resizer-cloud-api.akamaized.net/image/0CE65B1A-1031-48B8-B7E5-589953A4A11E/0-16x9.jpg?width=1920&updatedTime=2025-07-09T10:12:48Z&dt=Web" class="movie-poster" alt="khaidi" />
+      </a>
+      <a href="https://youtu.be/Ojw1bvqNbrI" target="_blank">
+        <img src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABaIBVFZzye6TTCvYrnzZCGVBLvjJkwTmwqrHQnhqohBEaEmnzeQVy0kEj9DSbkaK0fGVLgPMHuL8bR2hICSOhhau5oV0rAFoZFz6.jpg" class="movie-poster" alt="Petta " />
+      </a>
+    </a>
+    <a href="https://youtu.be/Iti4wb5j4aE" target="_blank">
+      <img src="https://sund-images.sunnxt.com/7628/640x360_Karthikeya_7628_38733ab3-099c-46fc-9c20-c6ba3b0daff5.jpg" class="movie-poster" alt="Karthikeya" />
+    </a>
+    </div>
+    <!--  Section 8:horror scenes.   -->
+    <h5 class="section-title">Horror Scenes </h5>
+    <div class="movie-row">
+      <a href="https://youtu.be/38fWzD359bc" target="_blank">
+        <img src="https://www.comingsoon.net/wp-content/uploads/sites/3/2023/12/Untitled-design-28-1.png" class="movie-poster" alt="Polimera 2" />
+      </a>
+      <a href="https://youtu.be/lZEhGK75xfQ" target="_blank">
+        <img src="https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/892/550892-h" class="movie-poster" alt="Raju Gari Gadhi" />
+      </a>
+      <a href="https://youtu.be/RHViLVTFjUw" target="_blank">
+        <img src="https://i.ytimg.com/vi/5gk55U-9Mgw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAOVw2ett-1y2UY7uqoeCdo-v9-Hw" class="movie-poster" alt="Prema Katha Chitram " />
+      </a>
+      <a href="https://youtu.be/Ozt4hWUKMn4" target="_blank">
+        <img src="https://sund-images.sunnxt.com/7538/1920x1080_e93eb07e-5aee-473e-84f9-89520243f215.jpg" class="movie-poster" alt="ganga" />
+      </a>
+      <a href="https://youtu.be/hDVXps53vII" target="_blank">
+        <img src="https://sund-images.sunnxt.com/26146/1280x720_25d53c42-4fda-43cf-8263-8db3e531a327.jpg" class="movie-poster" alt="Intlo Deyyam Nakem Bhayam" />
+      </a>
+      <a href="https://youtu.be/GAF1GZJoMOA" target="_blank">
+        <img src="https://akamaividz2.zee5.com/image/upload/w_1170,h_658,c_scale/resources/0-0-kaashmora/list/1170x6581967646851.jpg" class="movie-poster" alt="Kaashmora" />
+      </a>
+    </a>
+    <a href="https://youtu.be/YqY7r3X7nAA" target="_blank">
+      <img src="https://akamaividz2.zee5.com/image/upload/w_1170,h_658,c_scale/resources/0-0-2341/list/1170x6581899532199.jpg" class="movie-poster" alt="Rakshasudu" />
+    </a>
+    </div>
+    <!--  Section 9:comedy scenes.   -->
+    <h5 class="section-title">Comedy Scenes </h5>
+    <div class="movie-row">
+      <a href="https://youtu.be/dVkCPx-VKak" target="_blank">
+        <img src="https://cdn.gulte.com/wp-content/uploads/2023/10/et00370942-zstwyskajl-landscape2.jpg" class="movie-poster" alt="mad" />
+      </a>
+      <a href="https://youtu.be/jQlfoqXrohk" target="_blank">
+        <img src="https://m.media-amazon.com/images/M/MV5BZGM4ZGZhY2EtMDg0Yi00ZDMzLTkxYzktZWVmZjIwMzgwOGE4XkEyXkFqcGc@._V1_.jpg" class="movie-poster" alt="power" />
+      </a>
+      <a href="https://youtu.be/XGqfMsNg8pc" target="_blank">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVvO55vxw_sJ-nl2NQOCNx6J2BOQZ7VKurjLEmUHTrr3VF6AmktO_CKik8kiUiz0MikeP-XhEdkh58PoXmdk-EF6n7BMo8n4nLAguMHM-7ttAdIot0I2V3TSDm33qAWFBMhrk3TSFFMQMX/s1600/mirchi_movie_hq_wallpapers_posters_003.jpg" class="movie-poster" alt="mirchi " />
+      </a>
+      <a href="https://youtu.be/e0emevLtmkQ" target="_blank">
+        <img src="https://lh4.googleusercontent.com/proxy/g5S1UhMe9MOEP2HMjxMdOeTlpc_Q0XyT48sOtLQ02FRNmx-Y9s7XXwlgcGeWS-3WBQNNmdibhZXT6bLeJ0VzuT_YTX9ShGKbNOZDCUawAo0NbVOgHgIcBXJ406A1CHoNqD-75Q" class="movie-poster" alt="Venkatadri Express" />
+      </a>
+      <a href="https://youtu.be/cXTRdqgJhDo" target="_blank">
+        <img src="https://www.cinejosh.com/newsimg/newsmainimg/samajavaragamana-ott-release-date-locked_b_1207230906.jpg" class="movie-poster" alt="Samajavaragamana" />
+      </a>
+      <a href="https://youtu.be/JsxdZB9fcCI" target="_blank">
+        <img src="https://ksboxoffice.com/wp-content/uploads/2022/05/temper-movie-release-posters.jpg" class="movie-poster" alt="Temper" />
+      </a>
+    </a>
+    <a href="https://youtu.be/oFnGb1PNPZs" target="_blank">
+      <img src="https://d2h7z5r5pp4sed.cloudfront.net/telugu/gallery/movies/bheeshma2019/main01.jpg" class="movie-poster" alt="Bheeshma" />
+    </a>
+    </div>
+    <!--  Section 10:Devotional Scenes.   -->
+    <h5 class="section-title">Devotional Scenes </h5>
+    <div class="movie-row">
+      <a href="https://youtu.be/Q11M9phDdeU" target="_blank">
+        <img src="https://etv-win-image.akamaized.net/etvwin/telugumovies/srimanjunatha/62615/sri-manjunatha-Sri_Manjunatha_Movie-768x432.jpg" class="movie-poster" alt="Sri Manjunatha" />
+      </a>
+      <a href="https://youtu.be/9SsdBL8r8ug" target="_blank">
+        <img src="https://sund-images.sunnxt.com/7590/1920x1080_JagadguruAdiShankara_7590_73ae1db0-83da-40e6-87b9-0695d6e38899.jpg" class="movie-poster" alt="Jagadguru Adishankara" />
+      </a>
+      <a href="https://youtu.be/ByBYqkgyxJ0" target="_blank">
+        <img src="https://i.ytimg.com/vi/2Rce8nglbuA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDeZw4pONWNWFXB57mr5y5uwhluCg" class="movie-poster" alt=" Sri Ramadasu " />
+      </a>
+      <a href="https://youtu.be/fTVIexLjrZs" target="_blank">
+        <img src="https://media.ptcpunjabi.co.in/wp-content/uploads/2023/04/Adipurush_2d4622eaedb6457b88a309761145b0d0_1280X720.webp" class="movie-poster" alt="Adipurush" />
+      </a>
+      <a href="https://youtu.be/FUCA0NS3XPo" target="_blank">
+        <img src="https://alchetron.com/cdn/sri-rama-rajyam-24465c95-6d7b-4ecb-a5b9-ada0f76560d-resize-750.jpg" class="movie-poster" alt="Sri Rama Rajyam" />
+      </a>
+      <a href="https://youtu.be/N8z4jSBJhBc" target="_blank">
+        <img src="https://i.ytimg.com/vi/TdTdR4E43H4/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGH8gQygjMA8=&rs=AOn4CLDQVMGbg-VKId_ELly2c3CFoUDkqw" class="movie-poster" alt="Sri Anjaneyam" />
+      </a>
+    
+    </a>
+    <a href="https://youtu.be/GuXx69GS9Eo" target="_blank">
+      <img src="https://m.media-amazon.com/images/M/MV5BNjViYWQzMDEtMGYyMC00ZGYxLThlZmUtNDg1MWM5YmViZmRiXkEyXkFqcGc@._V1_.jpg" class="movie-poster" alt="Mayabazar" />
+    </a>
+  </div>
+    <!--  Section 11:hollywood movies.   -->
+    <h5 class="section-title">hollywood movies </h5>
+    <div class="movie-row">
+      <a href="https://youtu.be/nldljA0IFzw" target="_blank">
+        <img src="https://m.media-amazon.com/images/S/pv-target-images/189420c3dbf235953dbb719a513f845fe8422135b1008eadc67b8356ee4d2751.jpg" class="movie-poster" alt="Avatar: The Way of Water" />
+      </a>
+      <a href="https://youtu.be/nCqDdsZY7RA" target="_blank">
+        <img src="https://i.ytimg.com/vi/ocs9hjoWZc4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLALL1vxrHKjv7aUQbtkKzxOZ2XHUw" class="movie-poster" alt="Battleship " />
+      </a>
+      <a href="https://youtu.be/4QbW0jJyrFo" target="_blank">
+        <img src="https://i.ytimg.com/vi/A8Pl2eUGqXs/maxresdefault.jpg" class="movie-poster" alt=" The Great Wal " />
+      </a>
+      <a href="https://youtu.be/zyW3em8DPCc" target="_blank">
+        <img src="https://musicart.xboxlive.com/7/f78d5100-0000-0000-0000-000000000002/504/image.jpg" class="movie-poster" alt=" THE HOBBIT THE BATTLE OF THE FIVE ARMIES" />
+      </a>
+      <a href="https://youtu.be/Uf234e_9bmU" target="_blank">
+        <img src="https://i.ytimg.com/vi/EZzJBPjrSYM/maxresdefault.jpg" class="movie-poster" alt="Jurassic World 3" />
+      </a>
+      <a href="https://youtu.be/U_M_8cQyrmQ" target="_blank">
+        <img src="https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/e8dfef9b-fa41-4041-8230-7dd832116f2e/275bafa4-e630-475b-ac47-fe1e15952771?host=wbd-images.prod-vod.h264.io&partner=beamcom" class="movie-poster" alt="GODZILLA X KONG" />
+      </a>
+    </a>
+    <a href="https://youtu.be/Xlt-YtaNBgE" target="_blank">
+      <img src="https://gamespace.com/wp-content/uploads/2022/07/Dungeons-Dragons-Honor-Among-Thieves-Check-Out-the-Official-Trailer.webp" class="movie-poster" alt="The Fat Dragon" />
+    </a>
+  </a>
+  <a href="https://youtu.be/xwFZ8TGdQ1Y" target="_blank">
+    <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/02/best-fan-favorite-game-of-thrones-characters-ranked.jpg" class="movie-poster" alt="Game of Thrones" />
+  </a>
+</div>
+</div>
+<!--  Section 11:animation scenes.   -->
+<h5 class="section-title">Animation Scenes </h5>
+<div class="movie-row">
+  <a href="https://youtu.be/2eXNmRW0tmA" target="_blank">
+    <img src="https://m.media-amazon.com/images/M/MV5BM2U2MWY1ZWYtOWZmMS00ZDM0LTk0OWMtYzBlY2MxZWE0OGVjXkEyXkFqcGdeQWJpbndhYWtz._V1_.jpg" class="movie-poster" alt="Despicable Me 4" />
+  </a>
+  <a href="https://youtu.be/UUH4_Gl8vJU" target="_blank">
+    <img src="https://i.ytimg.com/vi/OWEq2Pf8qpk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB4UmEArPhVBAXc9QaUTA7KYHqykA" class="movie-poster" alt="Train Your Dragon's " />
+  </a>
+  <a href="https://youtu.be/QZlOZtdJA50" target="_blank">
+    <img src="https://www.electricpalace.org.uk/wp-content/uploads/2024/03/kung-fu-panda-4-pg-2024-94-mins-1090x625.jpg" class="movie-poster" alt=" KUNG FU PANDA 4 " />
+  </a>
+  <a href="https://youtu.be/5Q9BDt-oZgA" target="_blank">
+    <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/71c47741-e31c-4911-8d2d-2ebc0278de75/compose?aspectRatio=1.78&format=webp&width=1200" class="movie-poster" alt="ZOOTOPIA  " />
+  </a>
+  <a href="https://youtu.be/YU6sRWdzEMc" target="_blank">
+    <img src="https://ntvb.tmsimg.com/assets/p13107896_v_h8_ad.jpg?w=1280&h=720" class="movie-poster" alt="The Boss Baby's" />
+  </a>
+  <a href="https://youtu.be/IXBAOu0rXWA" target="_blank">
+    <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/3459fad1-be79-4654-a49b-c33e55bfbfce/compose?aspectRatio=1.78&format=webp&width=1200" class="movie-poster" alt="BRAVE " />
+  </a>
+</a>
+<a href="https://youtu.be/OFJQ9NU1JRs" target="_blank">
+  <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/951b2584-4274-40f8-af83-cbdbc069de97/compose?aspectRatio=1.78&format=webp&width=1200" class="movie-poster" alt="Big Hero 6" />
+</a>
+</a>
+<a href="https://youtu.be/MsmmwCjYUZs" target="_blank">
+<img src="https://m.media-amazon.com/images/S/pv-target-images/245204f8facdce09da7ba0c45dc618c81af3c73fd91cad014274abfb461dd903.jpg" class="movie-poster" alt="RIO " />
+</a>
+</div>
+<footer class="footer">
+  <div class="footer-top">
+    <h2>LIONS</h2>
+    <p>HOME BOX OFFICE</p>
+    <div class="footer-links">
+      <a href="#">ABOUT</a>
+      <a href="#">GET LIONS</a>
+      <a href="#">HELP</a>
+      <a href="#">SHOP</a>
+      <a href="#">CAREERS</a>
+      <a href="#">LIONS INSPIRES</a>
+    </div>
+  </div>
+
+  <div class="media-partners">
+    <p>Media Partners:</p>
+    <div class="social-icons">
+      <!-- Global Platforms -->
+      <a href="https://www.instagram.com" target="_blank" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com" target="_blank" title="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="https://twitter.com" target="_blank" title="Twitter/X">
+        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png" alt="Twitter">
+      </a>
+      <a href="https://www.youtube.com" target="_blank" title="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      </a>
+      <a href="https://www.google.com" target="_blank" title="Google">
+        <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google">
+      </a>
+      <a href="https://www.apple.com/app-store/" target="_blank" title="Apple App Store">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC5UlEQVR4Aa1XQ3hkQRjc+ynX2OZtbfu+tm3b1nlt27a9O4qNS5xxbdd+cTKvXydT31fJoPuvmvf6/ejw86dBlX6CwwQXCq6t5cLaz/xV4+ld6F8r9NdgsCAjIwf5+UUoLCwBydf8jN+JNQbBddzjDQM+gocErRSyWm2QgWu4lntq9/q01UAfwYKCgmK43W6ognu4lzEE+6oamCboLC0tR3vBGIwlOF2vgZm5uQWoqamBXrhcLpw5cxZ79uxFKxCxrGBMxpYZ6Eu33KAXNDp+/AQEBgbzv8Y6Kxi7+e1ofuAKVS/7zp27KE7i6dNnem5HAbVaM3CYh0YF/PWRkdEUpxHoQe3BPNTcQJCgTc9pT0tLh8VigdPpBLFv3368evVKBC7A16/fkJmZKX06qCXo39jAej67Wnjx4iVGjBiJ0NBwBAeHYsCAgTh48BCuXLmCKVOmIioqBrwS4eGRGDduPMxmMzyBWtRsbMCglWSePXuOkJAwCuhmnz79YLVaPSUrGjDWGQhgCvWEyspKdOrURUk8JiYO799/0Exg1KQ2DQxjHveEO3fuKomTPBcyUJPaNLCQxcQTNm3arGzAYDBABmoK7UU0sE7rAC5dukxJPCgoRPy6DMhATWpLDWzbtl35Cty//0DBgOQW3LhxU9nAsGEj4HA4dN0CySHkwvy6bKfECRMmISsrS34IZY8hMXnyFAZV5rFjx6WPoa5E9PnzZ2XxpKQUlJaWaiUik1IqXrBgkZKB06fPwBOKiv4fwA3Ni5FdK3NVVFSgd+++usRnzJilXIzII7JynJOTAxaa7t17Yt68+bh37z6+fPmKCxcuYvToMejVqzdWrVrNMi0rx4cVGxIFKDQkCi2ZAhRaMklTavWqeF6epCltxuneasvLyurb8lmqg0lfLw4m/dozmh0RtBUV6R/NuJZ7avf6eGs4ZeIwMoVmZrYcTvkZv+MarlUZTlUZIDi8diRfX8uFtZ8FqMb7Bx+2VJbBTrlcAAAAAElFTkSuQmCC" alt="Apple">
+      </a>
+      <a href="https://play.google.com/store" target="_blank" title="Google Play Store">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Play Store">
+      </a>
+      
+      <!-- Indian/Devotional/News Platforms -->
+      <a href="https://svbc.tirumala.org" target="_blank" title="SVBC">
+        <img src="data:image/png;base64,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" alt="SVBC" style="background:#fff; border-radius:6px;">
+      </a>
+      <a href="https://www.tirumala.org" target="_blank" title="TTD">
+        <img src="data:image/png;base64,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" alt="TTD" style="background:#fff; border-radius:6px;">
+      </a>
+      <a href="https://bhakthitv.in" target="_blank" title="Bhakthi TV">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0HBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc1Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIABMAIAMBEQACEQEDEQH/xAAYAAEBAAMAAAAAAAAAAAAAAAAFBgIDBP/EACwQAAICAQIDBgYDAAAAAAAAAAECAwQRAAUSITEGExQigdFRcYOUofAWNUH/xAAaAQACAwEBAAAAAAAAAAAAAAACAwEFBgQA/8QAKhEAAgECBAQFBQAAAAAAAAAAAQIDABEEEiExBUGRoSJRcYHwExUy0eH/2gAMAwEAAhEDEQA/AB5+1F6G7Mta33cSt5QYlOB6jWZHD8OyAuuvqa2UUCyKCaZp7pvllI2MzIkhRUkkhjRW4jhcEjnz0P2mHSydSf3UfSwAv4rkXNhrsLn5/ax3fe942mVYpr8WWQOrLHGysp6EeX9xrz8Nw6Nlde5ooMLhcTH9SIG22tEw9qtwnvwpZth42cBx3KDI9BqTw7DKhKLr6mhkw6RLcUVBY8HvSWJIxIYZ1kKFiOLBBxkdPnqxQ2AYUUKZ4Ml9wRVr/MUmsQPEoysiWG8TLkRMvEAqeU4OGHPH+dOumme7AjvXOnDSsbK58wMoF9bG5uRzG3fatW7dpIV7uxWnilsNUMRQx95wuGBUsWGMYJHIfPrrxlGbMDy+eVRFgWKGN1sMwOp5c9AT3J9qlb1mG1vcJ22v4eqhRIYyAGA6nOOp4i3pj4aCZgVJA0pgheOAq5ux59AOw61dU9srSsXlpV3Y9S0QJOszNPKosGI96Up0pmrslIjntlM/QX21Wvip7/meppMjsNjXTLsdHh/q6P26e2obFYgW8Z6mlLI5O9T9ra6sUjPFRrIyt5SsSgj8asop5WABY9a673Wv/9k=" alt="Bhakthi TV" style="border-radius:6px;">
+      </a>
+      <a href="https://www.tv9.com" target="_blank" title="TV9">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAeFBMVEVHcEx+gIG7vLsAAADW1dGxrZ/V1+EAAADNxMSesrKOjYZnZl+zsaoLT9T////dAADbAAAATNUAQdLkoaFXe97fAACjr9voUVHpAACouOz58PP209LndnfgOTmOn+UxX9f54uPR1fHyvLzeISFzid/jVVbdCQm/u7tgjPVeAAAADXRSTlMAkgNu/JP+Hv2T3Zjv9B0UxAAAAOtJREFUKJHFkstywyAMRWmTTtM2FhLQxMbgRx7N//9hJEhsZuJ01+lZsPBBumJkpf6B919Ql12JLbmoNZkZqjWDiHJ8b9S6KhCJMYQzW/0o8dgCM0RckgAt4gHguCAtQOSWcuVRevAyDfdekDDJ+LTST5WUuWcGxPOc6TJsTS0NQ4D7tNRD5kSmaS3aYRikPMuqEUbw5iTvQIwAB9RTZWdMxaVj+oh54llyXAO+B317hs5ykzMdGb7jao1p3pvcupTZE7muM7X+sTY7kV9j3iRR2qfsEmWjaZ/qc+zcxL6E5evqbeaj5OWPftsrFNYl65g2dkEAAAAASUVORK5CYII=" alt="TV9" style="border-radius:6px;">
+      </a>
+      <a href="https://sumantv.com/" target="_blank" title="Suman TV">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAHyElEQVR4AbWWA3BkSRyHv+73huEmy2SSNc62bdu2bdu2bdtGbm0jTjYZK/PQffOqNlVnTN19XW39Wv9qoHQcx8G27OrM3OYdc19N393psyT/F/FYTNp9hWDf4o4J2Wc/3Td52ys3Za559qv0xU/0pM572E6fel+Pu7gjwr/E5A9IxOMyHAqZqis5WE1ZOEa19a7t3vfeRvmctToFu06YRrk0JQR84ANhmKCVFJZLSQJsb+vimUpnWWdEtcfWdB76cJN8Or+26LNHCajRaGmE/OiAASZoxwFXobM2aA1KIyylKAEz2tsr+2566UI9u+UY7apGcgUTn0T4/WjbRTkOCNBSIgyJ9psQNKEoyPMohVB4gigFs6qyanB+fucpenF3HVqjDQFSghQgJMIrK9gQDqDLg4icBdkCOpEFnwHDqiFSA6ZZmgBDCgCJBkyJMAyEaYAhwXGRq4zAf+hWGKuOQBRFIABHoTqiOJ9No/D05+iupYi6GnTQV8IdEAKUBqVA+hDeIAEf3nb7Dt4K/76bIvwm/BIfGKOH4XnfTuuSPeV+dM7C6/dvkQixIiUQ3sQVYWR1Ob59NsV/4Oa/mPyPkQ2DCN98DNpAUgKSfvwmoiqMHDIAOXII/n02QUhJP45l0frB1zQ//Tb5jh601vQjx9fjbD4B+uwSBUiBCAWQA6sRjYOQa42B8iD9eJM1P/o6ZY9+Se1Lk+g7+V6l03n6EUKgt1yN3NIOSjZEIuSH2gq8y2QMHwxC8AsFDCKEEQyh3TxmMidjr3+JVVdNP4VYkorGYSUK0BoMA4I+ZEUYL/4lQkoqjtwRKxTGfn8i2lWYj3yGtB36DVG4ukxVPnt+aQK8AbFssB204+JtL5bDL2+19wT9R26Lb48NcX6Yh/3mD7iTF4EQYEqENCj5EmrXQWdy6N4UqjOG7o7jzmlBK80vEUIgayrw77Ie4QdPpezpczDXHo3OW6A1pQvQYMfTuG29qEXtuPNasb+YTt+nk1GOyx8hDImx6nBCD51G8Kw9wbZLf4Y4Lm4qh93eg7OgKGDGMvTMZtRzX5M69V4SL32Gd8n0H6xSSEHgyO0w998cp3V5CQK0xnNOvoATS2MXB7EXtmEtbMVZ0oGc3oxxwxtkNjuP3lPvIPX5JFzL5pfYjkNun/XDS4LWxhMnTly/qalpTc/PnDlz1KyZs0b81NS0+vz580cU+gp4zJk9e0yxfv2pU6asbqI10nVBaaxcHsOyMbJ9GIZAmCZCg1Aa0wXx2hTUKz+Q3HIsVfdfgDGwCo9vv/2W6667Lujz+Z6RUiKEUEVPJBKZVFNTs2j69On7Dx8+fMlVV1y5nm3b6rTTTnuqpaVl3XFjx30r8XAcQkgs28EqWBg7rE71JzdS9cG1VH50LeUfXINd41fKtsGRGB/NxX7nW5SrcByXcCjE8Mbhqram1lRK+YOBgFlbW7u8OHli/LhxTa7rhnt6eibEk4lRU6dOjUSj0ZWLZf6GxoZPzH5LZypwtUIpTV8yAUVz7KU9B4LgZQfJ/JkPIFIW5ir16C3WwrIsPNZYY03uueU2+fH7H3Tc8eiDdQ2RSMvtt92+QcDvz/3Y1DQqHA7nYrFYuHgkG6eSqUwqlarUWlvbbLX15yaAIzR+ICQMctol990srGhKqfKA7BfIjusTmrYOOpaCYQOwlUJbFv1kf5qZWNqy7Eul1MGuUrIn2psaNWqUlYjHl5SVlS1Ip9NrTpo0aTMhRMZxHNnQ0NCx0oQJs/otIW7RlwmTgnaxUzbRu1+UZecejNYKNGg0aI0eEIR8Dg+9oq+TSOPc9JxjbT+8rzg4Ra9YQVkwnBs5cuSPra2ta3Z1dm1umIbj7VzxiL52tcqZ/QNpNAhBNT6SUpC6722cmjCBQ3dCK4V2XX6J1hrlM3Hal6POuo+hXa7SGjwB7i/a+kIB3n777Y8+/fTTE6Ox6AivzvMTxo//5Jtvvt1aAgjRH4CWiiotqFEh1NUvETv6alJfTSaTSJIvFPB8JpkkM3cJhZufpXyPq4nMyyIxUMrFtm08Eb9k5fETplRXV6eKl494PE4wGExstdXW37e3ta5sAkgkQkq042Cetx9po0Dhze8wEnkGzY0jjrkXHQrghnxow8DI2/hyRS8DCGniidYCInX1S1dbdbWvI5H6ZYFAQLGC2kGDOtZYY43nu7u7xyilqK+vX9TY2Nhy2B77PSkc267L7HHFZCYtG+oZGPuU7ck2VpFt7iC+bC4DN9+KAYEwHc+9Q8O2m5G//01CjfWI2W0YroOpTaSQMGRALPjxtWuJhoEt5r/4oMp0KtVlrjv6Bj1+0AxRX5XxzVpKRSKDmreUEdtvjyVcMtqG43eld9tVSKwdIXHNgTRvG8FftBXNe4yjc8uRCEAIwb+Z3MMcUFur+nL5uzl1z0eNBZ2DdWv3ytak2Rs16PK1nWc+mVDbHa/zDk02DiZdGcA/qpHAwk7k+hNomzefquP3YfkLH1I/P8V/hneJ+rI504qnqrPv/LBq+qYXDo4fe/090e3P/a53tcO7e+r2K3SPPkx3rnWMzu53vZ6//Rk6t/opUbcjGuH/whOVTWdMO54anH35q42zlzx1cubIm5/L7nDZ7MyqJ6bTG5zR7bT11lEapYtyLMssJNIjspMW7OiW8Cf4GaM7DGpfGCIdAAAAAElFTkSuQmCC" alt="Suman TV" style="border-radius:6px;">
+      </a>
+      <a href="https://www.srisailadevasthanam.org/" target="_blank" title="Srisailam TV">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB60lEQVR4AYXPQ7BdWRQG4G/v+2xbbdu2bVvjHvW4HY0yyjQcZx4nw9i2zZMX3pNTqYfoVv6qzbXWj6gAkr96ZevlbN2fLYUQCw0P1NrRjFCIJCqMz/EH/sGz13VwiW14HP/iLjyKUei7pF7QQTFux6/oM4xH8ePAX7gmwQBzDybgy4BUuLT/d4xFzaUu4iXDRXgYd5xPY+mqQ13WH+605lCnjUfboAr3D8QK14rwLMagMp9Gu5N6yw92WHO43b6TNQNudGAcbs9ELyVQht/QlQtpWLCvz7YTtY6eLRXiOQv2d9t0tEUMaQ534ysEiANM9+JpINV/rsT+U1WZcrWdJ+odPF3p9PkiAwh4E93ZrDiQ/VO0Q5bfU+3rvdi52v7+CodPl/rspgVuq98tnwYDuHuAREQPXkMwmCd31pPP3uSbD2/1xcd3u//+FjnnXIJivIvaiDdws0uQylbDTW5sq9PR3iFf3ekaeFS2Ir6WpqXSvOxEtnB+0RRL5021YdYE+fXTCRGprGewrxZfRcJjobIxxLpuoaZNKK4gBPmzZzzUttMt9fvk8ykhCKU1WU+7rE92L8JTMSucjE03JbH7wSTXcW8SqpoTuZJESWVS23NzUtl7V6K84eJfqO1Ics23JLm2u5JQ15WQ9l8AXqSfm61iYcoAAAAASUVORK5CYII=" alt="Srisailam" style="border-radius:6px;">
+      </a>
+      <a href="https://www.bbc.com/news" target="_blank" title="BBC News">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcBAMAAACAI8KnAAAAG1BMVEX////7+/sAAAAjIyMYGBh0dHQ4ODgfHx9paWmS+I2mAAAAMUlEQVR4AWMYGoBR2diVrdg8IcTYSADEVVLSYFdSKmhSUoJxmZWUDDC56IrRjRoSAAAbNQxbcFxT3gAAAABJRU5ErkJggg==" alt="BBC" style="border-radius:6px;">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-policies">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Ad Choices</a>
+      <a href="#">Cookie Settings</a>
+    </div>
+    <p>© 2025 Home Box Office, Inc. All Rights Reserved.</p>
+    <p>This website may contain mature content.</p>
+  </div>
+</footer>
+  </div>
+</footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html> 
+</body>
+</html>
